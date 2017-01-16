@@ -1,0 +1,4 @@
+rules:
+    php.silenced_error:
+        - bzopen
+        - gzopen
