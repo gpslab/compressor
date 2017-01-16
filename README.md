@@ -4,7 +4,7 @@
 [![Build Status](https://img.shields.io/travis/gpslab/compressor.svg?maxAge=3600)](https://travis-ci.org/gpslab/compressor)
 [![Coverage Status](https://img.shields.io/coveralls/gpslab/compressor.svg?maxAge=3600)](https://coveralls.io/github/gpslab/compressor?branch=master)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/gpslab/compressor.svg?maxAge=3600)](https://scrutinizer-ci.com/g/gpslab/compressor/?branch=master)
-[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/5791b51a-f763-47de-bec0-985aaa203957.svg?maxAge=3600&label=SLInsight)](https://insight.sensiolabs.com/projects/5791b51a-f763-47de-bec0-985aaa203957)
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/55aa6cb4-fccc-4700-a00b-723c8f11a413.svg?maxAge=3600&label=SLInsight)](https://insight.sensiolabs.com/projects/55aa6cb4-fccc-4700-a00b-723c8f11a413)
 [![StyleCI](https://styleci.io/repos/79129059/shield?branch=master)](https://styleci.io/repos/79129059)
 [![License](https://img.shields.io/packagist/l/gpslab/compressor.svg?maxAge=3600)](https://github.com/gpslab/compressor)
 
