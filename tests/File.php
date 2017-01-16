@@ -1,17 +1,18 @@
 <?php
-
 /**
- * Pkvs package
+ * GpsLab component.
  *
- * @package Pkvs
- * @author  Peter Gribanov <pgribanov@1tv.com>
+ * @author    Peter Gribanov <info@peter-gribanov.ru>
+ * @copyright Copyright (c) 2011, Peter Gribanov
+ * @license   http://opensource.org/licenses/MIT
  */
+
 namespace GpsLab\Component\Compressor\Tests;
 
 class File
 {
     /**
-     * Image in base64
+     * Image in base64.
      *
      * @var string
      */
