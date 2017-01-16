@@ -6,6 +6,7 @@
  * @copyright Copyright (c) 2011, Peter Gribanov
  * @license   http://opensource.org/licenses/MIT
  */
+
 namespace GpsLab\Component\Compressor;
 
 interface CompressorInterface
