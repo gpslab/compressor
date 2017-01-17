@@ -86,7 +86,7 @@ class Filesystem
     {
         // not compress as a default
         if (!$compressor) {
-            $compressor = function($content) {
+            $compressor = function ($content) {
                 return $content;
             };
         }

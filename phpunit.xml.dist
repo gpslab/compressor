@@ -16,12 +16,9 @@
             <directory>./tests</directory>
         </testsuite>
     </testsuites>
-    <logging>
-        <log type="coverage-clover" target="build/coverage-clover.xml"/>
-    </logging>
     <filter>
-        <whitelist>
-            <directory>./src</directory>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
         </whitelist>
     </filter>
 </phpunit>
