@@ -21,7 +21,7 @@ class GzipCompressor implements CompressorInterface
     {
         $target = $target ?: $source.'.gz';
         $fh = @fopen($source, 'rb');
-        $gz = @gzopen($target, 'w9');
+        $gz = @gzopen($target, 'wb9');
 
         if ($fh === false || $gz === false) {
             return false;
@@ -47,14 +47,14 @@ class GzipCompressor implements CompressorInterface
      */
     public function uncompress($source, $target)
     {
-        $gz = @gzopen($source, 'w9');
-        $fh = @fopen($target, 'rb');
+        $gz = @gzopen($source, 'rb');
+        $fh = @fopen($target, 'wb');
 
         if ($fh === false || $gz === false) {
             return false;
         }
 
-        while (!feof($fh)) {
+        while (!feof($gz)) {
             if (fwrite($fh, gzread($gz, 1024)) === false) {
                 return false;
             }

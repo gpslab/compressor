@@ -47,14 +47,14 @@ class Bzip2Compressor implements CompressorInterface
      */
     public function uncompress($source, $target)
     {
-        $bz = @bzopen($source, 'w');
-        $fh = @fopen($target, 'rb');
+        $bz = @bzopen($source, 'r');
+        $fh = @fopen($target, 'wb');
 
         if ($fh === false || $bz === false) {
             return false;
         }
 
-        while (!feof($fh)) {
+        while (!feof($bz)) {
             if (fwrite($fh, bzread($bz, 1024)) === false) {
                 return false;
             }
