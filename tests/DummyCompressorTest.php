@@ -17,10 +17,11 @@ class DummyCompressorTest extends \PHPUnit_Framework_TestCase
      * @var DummyCompressor
      */
     private $compressor;
+
     /**
-     * @var File
+     * @var Filesystem
      */
-    private $file;
+    private $fs;
 
     /**
      * @var string
@@ -34,21 +35,16 @@ class DummyCompressorTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->source = tempnam(sys_get_temp_dir(), 'test');
-        $this->target = tempnam(sys_get_temp_dir(), 'test');
-
-        $this->file = new File();
         $this->compressor = new DummyCompressor();
+        $this->fs = new Filesystem();
+
+        $this->source = $this->fs->tempnam();
+        $this->target = $this->fs->tempnam();
     }
 
     protected function tearDown()
     {
-        if (file_exists($this->source)) {
-            unlink($this->source);
-        }
-        if (file_exists($this->target)) {
-            unlink($this->target);
-        }
+        $this->fs->clear();
     }
 
     public function testCompressDoNothing()
@@ -58,11 +54,11 @@ class DummyCompressorTest extends \PHPUnit_Framework_TestCase
 
     public function testCompress()
     {
-        $this->file->put($this->source);
+        $this->fs->put($this->source);
 
         $this->assertTrue($this->compressor->compress($this->source, $this->target));
-        $this->assertTrue(file_exists($this->target));
-        $this->assertTrue($this->file->equals($this->target));
+        $this->assertTrue($this->fs->exists($this->target));
+        $this->assertTrue($this->fs->equals($this->target));
     }
 
     public function testUncompressDoNothing()
@@ -72,10 +68,10 @@ class DummyCompressorTest extends \PHPUnit_Framework_TestCase
 
     public function testUncompress()
     {
-        $this->file->put($this->source);
+        $this->fs->put($this->source);
 
         $this->assertTrue($this->compressor->uncompress($this->source, $this->target));
-        $this->assertTrue(file_exists($this->target));
-        $this->assertTrue($this->file->equals($this->target));
+        $this->assertTrue($this->fs->exists($this->target));
+        $this->assertTrue($this->fs->equals($this->target));
     }
 }
