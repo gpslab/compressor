@@ -5,4 +5,3 @@ enabled:
 
 disabled:
   - phpdoc_align
-  - simplified_null_return
