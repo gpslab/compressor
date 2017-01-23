@@ -71,6 +71,14 @@ class Filesystem
     /**
      * @param string $filename
      */
+    public function remove($filename)
+    {
+        $this->fs->remove($filename);
+    }
+
+    /**
+     * @param string $filename
+     */
     public function put($filename)
     {
         file_put_contents($filename, self::CONTENT);
