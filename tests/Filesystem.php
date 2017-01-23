@@ -52,20 +52,11 @@ class Filesystem
     }
 
     /**
-     * @param string $suffix
-     *
      * @return string
      */
-    public function tempnam($suffix = '')
+    public function tempnam()
     {
-        $filename = $this->fs->tempnam($this->root, 'test');
-
-        if ($suffix) {
-            $this->fs->rename($filename, $filename.$suffix);
-            $filename .= $suffix;
-        }
-
-        return $filename;
+        return $this->fs->tempnam($this->root, 'test');
     }
 
     /**
