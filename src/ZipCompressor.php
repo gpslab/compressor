@@ -34,7 +34,7 @@ class ZipCompressor implements CompressorInterface
     {
         $target = $target ?: $source.'.zip';
 
-        if ($this->zip->open($target) === false) {
+        if ($this->zip->open($target, \ZipArchive::OVERWRITE | \ZipArchive::CREATE) === false) {
             return false;
         }
 
@@ -55,7 +55,7 @@ class ZipCompressor implements CompressorInterface
      */
     public function uncompress($source, $target)
     {
-        if ($this->zip->open($source) === false) {
+        if ($this->zip->open($source, \ZipArchive::CHECKCONS) === false) {
             return false;
         }
 
