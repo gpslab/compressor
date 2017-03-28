@@ -2,5 +2,6 @@ rules:
     php.silenced_error:
         enabled: true
         function_whitelist:
+            - fopen
             - bzopen
             - gzopen
