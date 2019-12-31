@@ -10,8 +10,9 @@
 namespace GpsLab\Component\Compressor\Tests;
 
 use GpsLab\Component\Compressor\ZipCompressor;
+use PHPUnit\Framework\TestCase;
 
-class ZipCompressorTest extends \PHPUnit_Framework_TestCase
+class ZipCompressorTest extends TestCase
 {
     /**
      * @var ZipCompressor
