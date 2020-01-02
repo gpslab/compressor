@@ -10,8 +10,9 @@
 namespace GpsLab\Component\Compressor\Tests;
 
 use GpsLab\Component\Compressor\Bzip2Compressor;
+use PHPUnit\Framework\TestCase;
 
-class Bzip2CompressorTest extends \PHPUnit_Framework_TestCase
+class Bzip2CompressorTest extends TestCase
 {
     /**
      * @var Bzip2Compressor

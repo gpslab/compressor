@@ -10,8 +10,9 @@
 namespace GpsLab\Component\Compressor\Tests;
 
 use GpsLab\Component\Compressor\DummyCompressor;
+use PHPUnit\Framework\TestCase;
 
-class DummyCompressorTest extends \PHPUnit_Framework_TestCase
+class DummyCompressorTest extends TestCase
 {
     /**
      * @var DummyCompressor
