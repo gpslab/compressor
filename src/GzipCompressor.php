@@ -23,12 +23,12 @@ class GzipCompressor implements CompressorInterface
         $fh = @fopen($source, 'rb');
         $gz = @gzopen($target, 'wb9');
 
-        if ($fh === false || $gz === false) {
+        if (false === $fh || false === $gz) {
             return false;
         }
 
         while (!feof($fh)) {
-            if (gzwrite($gz, fread($fh, 1024)) === false) {
+            if (false === gzwrite($gz, fread($fh, 1024))) {
                 return false;
             }
         }
@@ -50,12 +50,12 @@ class GzipCompressor implements CompressorInterface
         $gz = @gzopen($source, 'rb');
         $fh = @fopen($target, 'wb');
 
-        if ($fh === false || $gz === false) {
+        if (false === $fh || false === $gz) {
             return false;
         }
 
         while (!feof($gz)) {
-            if (fwrite($fh, gzread($gz, 1024)) === false) {
+            if (false === fwrite($fh, gzread($gz, 1024))) {
                 return false;
             }
         }

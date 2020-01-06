@@ -23,12 +23,12 @@ class Bzip2Compressor implements CompressorInterface
         $fh = @fopen($source, 'rb');
         $bz = @bzopen($target, 'w');
 
-        if ($fh === false || $bz === false) {
+        if (false === $fh || false === $bz) {
             return false;
         }
 
         while (!feof($fh)) {
-            if (bzwrite($bz, fread($fh, 1024)) === false) {
+            if (false === bzwrite($bz, fread($fh, 1024))) {
                 return false;
             }
         }
@@ -50,12 +50,12 @@ class Bzip2Compressor implements CompressorInterface
         $bz = @bzopen($source, 'r');
         $fh = @fopen($target, 'wb');
 
-        if ($fh === false || $bz === false) {
+        if (false === $fh || false === $bz) {
             return false;
         }
 
         while (!feof($bz)) {
-            if (fwrite($fh, bzread($bz, 1024)) === false) {
+            if (false === fwrite($fh, bzread($bz, 1024))) {
                 return false;
             }
         }

@@ -34,11 +34,11 @@ class ZipCompressor implements CompressorInterface
     {
         $target = $target ?: $source.'.zip';
 
-        if ($this->zip->open($target, \ZipArchive::OVERWRITE | \ZipArchive::CREATE) === false) {
+        if (false === $this->zip->open($target, \ZipArchive::OVERWRITE | \ZipArchive::CREATE)) {
             return false;
         }
 
-        if ($this->zip->addFile($source, basename($source)) === false) {
+        if (false === $this->zip->addFile($source, basename($source))) {
             $this->zip->close();
 
             return false;
@@ -55,11 +55,11 @@ class ZipCompressor implements CompressorInterface
      */
     public function uncompress($source, $target)
     {
-        if ($this->zip->open($source, \ZipArchive::CHECKCONS) === false) {
+        if (false === $this->zip->open($source, \ZipArchive::CHECKCONS)) {
             return false;
         }
 
-        if ($this->zip->extractTo(dirname($target), basename($target)) === false) {
+        if (false === $this->zip->extractTo(dirname($target), basename($target))) {
             $this->zip->close();
 
             return false;
