@@ -52,4 +52,19 @@ class ZipCompressorTest extends TestCase
         $this->assertTrue($this->fs->exists($source));
         $this->assertTrue($this->fs->equals($source));
     }
+
+    public function testCompressOnIncorrectFilePath()
+    {
+        $source = '/this/bzip/file/is/not/existed';
+
+        $this->assertFalse($this->compressor->compress($source));
+    }
+
+    public function testUncompressOnIncorrectFilePath()
+    {
+        $source = '/this/bzip/file/is/not/existed';
+        $target = '/this/target/bzip/file/is/not/existed';
+
+        $this->assertFalse($this->compressor->uncompress($source, $target));
+    }
 }
