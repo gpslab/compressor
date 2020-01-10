@@ -38,9 +38,7 @@ class ZipCompressor implements CompressorInterface
             return false;
         }
 
-        if (false === $this->zip->addFile($source, basename($source))) {
-            $this->zip->close();
-
+        if (false === @$this->zip->addFile($source, basename($source))) {
             return false;
         }
 
@@ -59,9 +57,7 @@ class ZipCompressor implements CompressorInterface
             return false;
         }
 
-        if (false === $this->zip->extractTo(dirname($target), basename($target))) {
-            $this->zip->close();
-
+        if (false === @$this->zip->extractTo(dirname($target), basename($target))) {
             return false;
         }
 
